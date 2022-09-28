@@ -12,10 +12,20 @@ public class GreetingResourceTest {
     @Test
     public void testHelloEndpoint() {
         given()
-          .when().get("/hello")
-          .then()
-             .statusCode(200)
-             .body(is("Hello from RESTEasy Reactive"));
+                .when().get("/")
+                .then()
+                .statusCode(200)
+                .body(is("Hello from RESTEasy Reactive"));
     }
 
+    @Test
+    void testGreetingEndpoint() {
+        given()
+                .pathParam("name", "turtle").
+                when()
+                .get("/greeting/{name}").
+                then()
+                .statusCode(200)
+                .body(is("hello turtle"));
+    }
 }
