@@ -15,8 +15,20 @@ dependencies {
     implementation 'io.quarkus:quarkus-hibernate-reactive-panache'
     implementation 'io.quarkus:quarkus-reactive-pg-client' // Postgres
     implementation 'io.quarkus:quarkus-arc'
+
+    implementation 'io.quarkus:quarkus-rest-client-reactive'
+    implementation 'io.quarkus:quarkus-rest-client-reactive-jackson'
+
+
+    implementation 'io.quarkus:quarkus-oidc'
+    implementation 'io.quarkus:quarkus-oidc-client'
+    implementation 'io.quarkus:quarkus-oidc-client-reactive-filter'
+    implementation 'io.quarkus:quarkus-oidc-token-propagation-reactive'
+
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
+
+    testImplementation 'org.assertj:assertj-core:3.22.0'
 }
 
 group 'org.acme'
